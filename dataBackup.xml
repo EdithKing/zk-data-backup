@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<path id="anyone" pathName="/" perms="31" schema="world">
+    <path data="192.168.0.105" id="anyone" pathName="/dubbo" perms="31" schema="world">
+        <path data="192.168.0.105" id="anyone" pathName="/dubbo/org.apache.dubbo.demo.DemoService" perms="31"
+              schema="world">
+            <path data="192.168.0.105" id="anyone" pathName="/dubbo/org.apache.dubbo.demo.DemoService/configurators"
+                  perms="31" schema="world"/>
+            <path data="192.168.0.105" id="anyone" pathName="/dubbo/org.apache.dubbo.demo.DemoService/providers"
+                  perms="31" schema="world"/>
+        </path>
+    </path>
+    <path id="anyone" pathName="/dd-job" perms="31" schema="world"/>
+    <path id="anyone" pathName="/zookeeper" perms="31" schema="world">
+        <path id="anyone" pathName="/zookeeper/config" perms="1" schema="world"/>
+        <path id="anyone" pathName="/zookeeper/quota" perms="31" schema="world"/>
+    </path>
+    <path id="anyone" pathName="/itsm-job" perms="31" schema="world">
+        <path id="anyone" pathName="/itsm-job/testMonthJob" perms="31" schema="world">
+            <path id="anyone" pathName="/itsm-job/testMonthJob/leader" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testMonthJob/leader/election" perms="31" schema="world">
+                    <path id="anyone" pathName="/itsm-job/testMonthJob/leader/election/latch" perms="31"
+                          schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testMonthJob/leader/sharding" perms="31" schema="world"/>
+            </path>
+            <path id="anyone" pathName="/itsm-job/testMonthJob/servers" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testMonthJob/servers/192.168.1.108" perms="31" schema="world"/>
+            </path>
+            <path data="{&quot;jobName&quot;:&quot;testMonthJob&quot;,&quot;jobClass&quot;:&quot;com.item_esjob.TestMonthJob&quot;,&quot;jobType&quot;:&quot;SIMPLE&quot;,&quot;cron&quot;:&quot;30 * * * * ? *&quot;,&quot;shardingTotalCount&quot;:3,&quot;shardingItemParameters&quot;:&quot;&quot;,&quot;jobParameter&quot;:&quot;&quot;,&quot;failover&quot;:false,&quot;misfire&quot;:true,&quot;description&quot;:&quot;&quot;,&quot;jobProperties&quot;:{&quot;job_exception_handler&quot;:&quot;com.dangdang.ddframe.job.executor.handler.impl.DefaultJobExceptionHandler&quot;,&quot;executor_service_handler&quot;:&quot;com.dangdang.ddframe.job.executor.handler.impl.DefaultExecutorServiceHandler&quot;},&quot;monitorExecution&quot;:true,&quot;maxTimeDiffSeconds&quot;:-1,&quot;monitorPort&quot;:-1,&quot;jobShardingStrategyClass&quot;:&quot;&quot;,&quot;reconcileIntervalMinutes&quot;:10,&quot;disabled&quot;:false,&quot;overwrite&quot;:false}"
+                  id="anyone" pathName="/itsm-job/testMonthJob/config" perms="31" schema="world"/>
+            <path id="anyone" pathName="/itsm-job/testMonthJob/instances" perms="31" schema="world"/>
+            <path id="anyone" pathName="/itsm-job/testMonthJob/sharding" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testMonthJob/sharding/0" perms="31" schema="world">
+                    <path data="192.168.1.108@-@3560" id="anyone" pathName="/itsm-job/testMonthJob/sharding/0/instance"
+                          perms="31" schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testMonthJob/sharding/1" perms="31" schema="world">
+                    <path data="192.168.1.108@-@3560" id="anyone" pathName="/itsm-job/testMonthJob/sharding/1/instance"
+                          perms="31" schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testMonthJob/sharding/2" perms="31" schema="world">
+                    <path data="192.168.1.108@-@3560" id="anyone" pathName="/itsm-job/testMonthJob/sharding/2/instance"
+                          perms="31" schema="world"/>
+                </path>
+            </path>
+        </path>
+        <path id="anyone" pathName="/itsm-job/testDayJob" perms="31" schema="world">
+            <path id="anyone" pathName="/itsm-job/testDayJob/leader" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testDayJob/leader/election" perms="31" schema="world">
+                    <path id="anyone" pathName="/itsm-job/testDayJob/leader/election/latch" perms="31" schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testDayJob/leader/sharding" perms="31" schema="world"/>
+            </path>
+            <path id="anyone" pathName="/itsm-job/testDayJob/servers" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testDayJob/servers/192.168.1.108" perms="31" schema="world"/>
+            </path>
+            <path data="{&quot;jobName&quot;:&quot;testDayJob&quot;,&quot;jobClass&quot;:&quot;com.item_esjob.TestDayJob&quot;,&quot;jobType&quot;:&quot;SIMPLE&quot;,&quot;cron&quot;:&quot;0 * * * * ? *&quot;,&quot;shardingTotalCount&quot;:3,&quot;shardingItemParameters&quot;:&quot;&quot;,&quot;jobParameter&quot;:&quot;&quot;,&quot;failover&quot;:false,&quot;misfire&quot;:true,&quot;description&quot;:&quot;&quot;,&quot;jobProperties&quot;:{&quot;job_exception_handler&quot;:&quot;com.dangdang.ddframe.job.executor.handler.impl.DefaultJobExceptionHandler&quot;,&quot;executor_service_handler&quot;:&quot;com.dangdang.ddframe.job.executor.handler.impl.DefaultExecutorServiceHandler&quot;},&quot;monitorExecution&quot;:true,&quot;maxTimeDiffSeconds&quot;:-1,&quot;monitorPort&quot;:-1,&quot;jobShardingStrategyClass&quot;:&quot;&quot;,&quot;reconcileIntervalMinutes&quot;:10,&quot;disabled&quot;:false,&quot;overwrite&quot;:false}"
+                  id="anyone" pathName="/itsm-job/testDayJob/config" perms="31" schema="world"/>
+            <path id="anyone" pathName="/itsm-job/testDayJob/instances" perms="31" schema="world"/>
+            <path id="anyone" pathName="/itsm-job/testDayJob/sharding" perms="31" schema="world">
+                <path id="anyone" pathName="/itsm-job/testDayJob/sharding/0" perms="31" schema="world">
+                    <path data="192.168.1.108@-@9408" id="anyone" pathName="/itsm-job/testDayJob/sharding/0/instance"
+                          perms="31" schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testDayJob/sharding/1" perms="31" schema="world">
+                    <path data="192.168.1.108@-@9408" id="anyone" pathName="/itsm-job/testDayJob/sharding/1/instance"
+                          perms="31" schema="world"/>
+                </path>
+                <path id="anyone" pathName="/itsm-job/testDayJob/sharding/2" perms="31" schema="world">
+                    <path data="192.168.1.108@-@9408" id="anyone" pathName="/itsm-job/testDayJob/sharding/2/instance"
+                          perms="31" schema="world"/>
+                </path>
+            </path>
+        </path>
+    </path>
+</path>
