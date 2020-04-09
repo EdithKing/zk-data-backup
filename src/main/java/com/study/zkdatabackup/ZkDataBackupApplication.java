@@ -47,7 +47,7 @@ public class ZkDataBackupApplication {
             zkClientTools.setSource(source);
             ZkClientDataTextTools zkClientDataTextTools = new ZkClientDataTextTools();
             zkClientDataTextTools.setSource(source);
-            zkClientDataTextTools.setFile(new File(args[3]));
+            zkClientDataTextTools.setFile(new File(args[2]));
             zkClientDataTextTools.recovery();
         }
     }
