@@ -4,6 +4,7 @@ import com.study.zkdatabackup.entity.PathNode;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.CreateMode;
+import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Id;
@@ -116,6 +117,7 @@ public class ZkClientDataTextTools {
     /**
      * 将xml文件内容恢复至zk
      */
+
     public void recovery() {
         if (file != null && file.exists() && file.getName().lastIndexOf(".xml") != -1) {
             try {
@@ -136,14 +138,9 @@ public class ZkClientDataTextTools {
                     String id = element.getAttribute("id");
                     String schema = element.getAttribute("schema");
                     String perms = element.getAttribute("perms");
-                    List<ACL> acls = null;
-                    if (id != null) {
-                        acls = new ArrayList<>();
-                        ACL acl = new ACL();
-                        acl.setId(new Id(id, schema));
-                        acl.setPerms(Integer.valueOf(perms));
-                        acls.add(acl);
-                    }
+                    ACL acl = new ACL(ZooDefs.Perms.ALL,ZooDefs.Ids.ANYONE_ID_UNSAFE);
+                    List<ACL> acls = new ArrayList<ACL>();
+                    acls.add(acl);
                     Stat stat = source.exists(pathName, true);
                     if (null == stat) {
                         source.create(pathName, data.getBytes(), acls, CreateMode.PERSISTENT);

@@ -21,7 +21,7 @@ public class ZkClient {
 
     private String zookeeper_server = "127.0.0.1:2181";
 
-    private Integer sessionTimeout = 3000;
+    private Integer sessionTimeout = 300000;
 
     private Watcher watcher = new Watcher() {
         @Override

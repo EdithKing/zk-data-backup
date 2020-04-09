@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.ACL;
+import org.apache.zookeeper.data.Stat;
 
 import java.util.HashMap;
 import java.util.List;
@@ -79,12 +80,11 @@ public class ZkClientTools {
      * @return
      */
     public PathNode getData(String path) {
-        PathNode pathNode = null;
+        PathNode pathNode = new PathNode();
+        pathNode.setPath(path);
         try {
             byte[] datas = source.getData(path, null, null);
-            List<ACL> acls = source.getACL(path, null);
-            pathNode = new PathNode();
-            pathNode.setPath(path);
+            List<ACL> acls = source.getACL(path,null);
             if (datas != null && datas.length != 0) {
                 pathNode.setData(new String(datas, "UTF-8"));
             }
@@ -92,9 +92,9 @@ public class ZkClientTools {
                 pathNode.setAcls(acls);
             }
         } catch (Exception e) {
-            log.error("获取路径{}的数据异常,{}", path, e);
+//            log.error("获取路径{}的数据异常,{}", path, e);
         }
-        log.info("获取的node:{}", pathNode);
+//        log.info("获取的node:{}", pathNode);
         return pathNode;
     }
 
@@ -110,7 +110,8 @@ public class ZkClientTools {
             paths = source.getChildren(path, null);
             return paths;
         } catch (Exception e) {
-            log.error("获取路径{}的子节点异常,{}", path, e);
+//            log.error("获取路径{}的子节点异常,{}", path, e);
+            e.printStackTrace();
         }
         return paths;
     }
